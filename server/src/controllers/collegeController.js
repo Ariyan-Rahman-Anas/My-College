@@ -51,3 +51,35 @@ export const getSingleCollege = async (req, res, next) => {
         next(error)
     }
 }
+
+
+export const searchCollege = async (req, res, next) => {
+    try {
+        const { name } = req.query; // Get the "name" query parameter
+        if (!name) {
+            return res.status(400).json({
+                success: false,
+                message: "Please provide a college name to search.",
+            });
+        }
+
+        const colleges = await CollegeModel.find({
+            name: { $regex: name, $options: "i" }, // Case-insensitive search
+        });
+
+        if (colleges.length < 1) {
+            return res.status(404).json({
+                success: false,
+                message: "No colleges found matching the provided name.",
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Colleges fetched successfully based on the search query.",
+            colleges,
+        });
+    } catch (error) {
+        next(error);
+    }
+};
