@@ -1,9 +1,11 @@
 import Hero from "@/components/Hero"
+import SearchCollege from "@/components/SearchCollege"
 
 const HomePage = () => {
   return (
     <div className="px-2">
-      <Hero />
+      <SearchCollege />
+      {/* <Hero /> */}
     </div>
   )
 }

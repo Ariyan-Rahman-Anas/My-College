@@ -128,7 +128,6 @@ const RegistrationPage = () => {
               </Link>
             </div>
           </CardContent>
-
         </form>
       </Card>
     </div>

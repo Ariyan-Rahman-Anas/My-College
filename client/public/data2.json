@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Harvard University",
+    "image": "https://i.ibb.co/9b2R1wx/1.png",
+    "details": "Harvard University, established in 1636, is one of the most prestigious and oldest higher education institutions in the United States. Located in Cambridge, Massachusetts, the university is renowned globally for its rigorous academic programs, world-class faculty, and groundbreaking research. Harvard offers a wide range of undergraduate, graduate, and professional degrees across various disciplines, including arts, sciences, law, business, and medicine. The university boasts state-of-the-art libraries, research centers, and facilities, and has produced numerous Nobel laureates, U.S. presidents, and prominent leaders in every field. Its vibrant campus life includes over 400 student organizations, cultural events, and opportunities for global networking.",
+    "admissionDates": {
+      "start": "2025-01-15",
+      "end": "2025-04-30"
+    },
+    "events": [
+      "Science and Technology Fair",
+      "Alumni Networking Night",
+      "International Students' Orientation"
+    ],
+    "researchHistory": "Since the 19th century, Harvard has been a pioneer in medical advancements, artificial intelligence, and cutting-edge humanities research.",
+    "sports": ["Basketball", "Rowing", "Soccer", "Track and Field"],
+    "rating":"5"
+  },
+  {
+    "name": "Stanford University",
+    "image": "https://i.ibb.co/gt3jBGv/3.png",
+    "details": "Stanford University, located in the heart of Silicon Valley in Stanford, California, is synonymous with innovation and entrepreneurship. Founded in 1885, it has become a global leader in academic excellence, research, and technology. The university is renowned for fostering startups and driving technological advancements, with many of its alumni founding iconic companies like Google, Hewlett-Packard, and Netflix. Stanford offers a comprehensive range of academic programs in engineering, business, humanities, and sciences, and is home to a robust athletic program with a strong emphasis on student well-being. Its sprawling 8,180-acre campus includes stunning architecture, a world-famous art museum, and state-of-the-art labs.",
+    "admissionDates": {
+      "start": "2025-02-01",
+      "end": "2025-05-15"
+    },
+    "events": [
+      "Entrepreneurship Week",
+      "Tech Symposium",
+      "Community Service Day"
+    ],
+    "researchHistory": "Stanford has driven innovation in fields such as artificial intelligence, space exploration, and renewable energy, and continues to lead global initiatives.",
+    "sports": ["Football", "Swimming", "Tennis", "Volleyball"],
+    "rating": "5"
+  },
+  {
+    "name": "Massachusetts Institute of Technology (MIT)",
+    "image": "https://i.ibb.co/RB5XYYk/4.png",
+    "details": "The Massachusetts Institute of Technology (MIT) is a world-renowned institution located in Cambridge, Massachusetts, dedicated to advancing knowledge and educating students in science, technology, and other areas of scholarship. Founded in 1861, MIT is famous for its emphasis on research and innovation, contributing to significant breakthroughs in artificial intelligence, clean energy, and biotechnology. The campus fosters a culture of collaboration, with students and faculty often working on real-world problems. With cutting-edge facilities, including the Media Lab and Nuclear Reactor Lab, MIT has a global reputation for producing leaders in academia, industry, and public service.",
+    "admissionDates": {
+      "start": "2025-01-10",
+      "end": "2025-04-25"
+    },
+    "events": [
+      "Hackathon Challenge",
+      "Energy and Environment Conference",
+      "AI and Robotics Workshop"
+    ],
+    "researchHistory": "MIT has been at the forefront of technological advancements, including aerospace, nuclear physics, and quantum computing.",
+    "sports": ["Cross Country", "Basketball", "Fencing", "Rowing"],
+    "rating": "4"
+  },
+  {
+    "name": "University of Oxford",
+    "image": "https://i.ibb.co/qDZhpPL/5.png",
+    "details": "The University of Oxford, located in the historic city of Oxford, England, is the oldest university in the English-speaking world, dating back to 1096. With its timeless architecture and centuries of academic tradition, Oxford is a symbol of excellence in education and research. The university offers unparalleled academic programs across a range of disciplines, including the humanities, sciences, medicine, and law. Its tutorial-based learning system ensures personalized attention and intellectual development for students. Oxford’s libraries and museums house some of the rarest collections in the world. The university also has an active role in global research initiatives, particularly in medical sciences and climate change.",
+    "admissionDates": {
+      "start": "2025-03-01",
+      "end": "2025-06-15"
+    },
+    "events": [
+      "Literature Festival",
+      "Global Scholars Summit",
+      "Climate Change Talks"
+    ],
+    "researchHistory": "Oxford has been instrumental in medical breakthroughs, philosophical research, and environmental studies for centuries.",
+    "sports": ["Cricket", "Rowing", "Rugby", "Track and Field"],
+    "rating": "5"
+  },
+  {
+    "name": "California Institute of Technology (Caltech)",
+    "image": "https://i.ibb.co/ZM1h2xg/6.png",
+    "details": "The California Institute of Technology, commonly known as Caltech, is a private research university in Pasadena, California. Known for its strong emphasis on science and engineering, Caltech is one of the smallest but most prestigious institutions in the world. With a student-to-faculty ratio of 3:1, students receive a highly personalized education. Caltech is home to the Jet Propulsion Laboratory (JPL), which collaborates with NASA on space exploration. The campus is renowned for its innovative culture, diverse student community, and groundbreaking research in fields such as physics, chemistry, and astronomy.",
+    "admissionDates": {
+      "start": "2025-02-15",
+      "end": "2025-05-30"
+    },
+    "events": [
+      "Space Exploration Symposium",
+      "Physics Frontiers Lecture Series",
+      "Annual Tech Showcase"
+    ],
+    "researchHistory": "Caltech has been central to developments in space exploration, quantum mechanics, and sustainable technologies.",
+    "sports": ["Tennis", "Basketball", "Track and Field", "Swimming"],
+    "rating": "3"
+  },
+  {
+    "name": "University of Cambridge",
+    "image": "https://i.ibb.co/98qZCc1/7.png",
+    "details": "The University of Cambridge, founded in 1209, is a world-class institution known for its rich academic tradition, stunning architecture, and groundbreaking research. Located in Cambridge, England, the university comprises 31 autonomous colleges, each with its own distinctive character. Cambridge has a global reputation for excellence in fields ranging from natural sciences to the arts and social sciences. The university fosters intellectual growth through its personalized tutorial system and encourages interdisciplinary collaboration. Its libraries and museums, including the Fitzwilliam Museum, attract scholars and tourists from all over the world.",
+    "admissionDates": {
+      "start": "2025-01-20",
+      "end": "2025-05-10"
+    },
+    "events": [
+      "Shakespeare Festival",
+      "Cambridge Science Week",
+      "Cultural Heritage Fair"
+    ],
+    "researchHistory": "Cambridge has been a pioneer in DNA research, mathematics, and climate science, with over 100 Nobel laureates associated with it.",
+    "sports": ["Rowing", "Cricket", "Soccer", "Rugby"],
+    "rating": "4"
+  },
+  {
+    "name": "Princeton University",
+    "image": "https://i.ibb.co/1XFq9kN/8.png",
+    "details": "Princeton University, located in Princeton, New Jersey, is one of the Ivy League's most prestigious institutions. Founded in 1746, it is renowned for its focus on undergraduate education and its emphasis on close student-faculty collaboration. The university excels in the humanities, social sciences, natural sciences, and engineering. Princeton’s historic campus, characterized by its Collegiate Gothic architecture, houses state-of-the-art research facilities and libraries. The institution has a strong tradition of public service and global engagement, preparing students to address contemporary challenges through leadership and innovation.",
+    "admissionDates": {
+      "start": "2025-01-25",
+      "end": "2025-05-05"
+    },
+    "events": [
+      "Annual Global Affairs Summit",
+      "Innovation Showcase",
+      "Literature and Arts Festival"
+    ],
+    "researchHistory": "Princeton has contributed to significant discoveries in theoretical physics, neuroscience, and public policy, with a legacy of Nobel Prize-winning research.",
+    "sports": ["Soccer", "Basketball", "Rowing", "Lacrosse"],
+    "rating": "5"
+  },
+  {
+    "name": "Yale University",
+    "image": "https://i.ibb.co.com/1XFq9kN/8.png",
+    "details": "Yale University, founded in 1701, is located in New Haven, Connecticut, and is renowned for its exceptional liberal arts education and world-class professional schools. Yale’s iconic campus is home to historical landmarks such as the Beinecke Rare Book & Manuscript Library and Harkness Tower. The university fosters a vibrant intellectual community where students explore a wide range of disciplines. Known for its arts and drama programs, Yale has produced numerous Pulitzer Prize winners, politicians, and entertainers. Its commitment to fostering creativity, critical thinking, and leadership sets it apart as a premier institution.",
+    "admissionDates": {
+      "start": "2025-02-10",
+      "end": "2025-05-20"
+    },
+    "events": [
+      "Art and Theater Showcase",
+      "Global Leaders Conference",
+      "Spring Music Festival"
+    ],
+    "researchHistory": "Yale has been instrumental in advancing research in law, public health, and environmental science, with a strong emphasis on interdisciplinary work.",
+    "sports": ["Basketball", "Ice Hockey", "Soccer", "Rowing"],
+    "rating": "5"
+  },
+  {
+    "name": "University of Chicago",
+    "image": "https://i.ibb.co.com/BLP2dNK/9.png",
+    "details": "The University of Chicago, established in 1890, is a private research university located in Chicago, Illinois. Renowned for its commitment to rigorous inquiry and intellectual debate, UChicago has consistently pushed the boundaries of education and research. The university is known for its Nobel Prize-winning faculty, contributions to economics (such as the Chicago School of Economics), and groundbreaking work in the sciences and humanities. Its picturesque campus features Gothic architecture, award-winning research facilities, and vibrant student organizations, fostering a dynamic and enriching learning environment.",
+    "admissionDates": {
+      "start": "2025-01-18",
+      "end": "2025-05-02"
+    },
+    "events": [
+      "Economics and Policy Conference",
+      "Annual Debate Championship",
+      "Research Innovation Week"
+    ],
+    "researchHistory": "The University of Chicago has a legacy of influential contributions to economics, physics, and sociology, shaping modern academic disciplines.",
+    "sports": ["Soccer", "Track and Field", "Tennis", "Basketball"],
+    "rating": "4"
+  },
+  {
+    "name": "University of California, Berkeley",
+    "image": "https://i.ibb.co.com/Q9WzHg2/10.png",
+    "details": "The University of California, Berkeley, commonly referred to as UC Berkeley, is one of the world's leading public research universities. Located in Berkeley, California, it has been at the forefront of innovation and academic excellence since its founding in 1868. Berkeley is known for its contributions to engineering, environmental sciences, and social policy, along with a tradition of activism and public service. The diverse campus community, cutting-edge laboratories, and dynamic cultural scene make UC Berkeley a hub of intellectual and creative energy. It is home to numerous Nobel laureates, Rhodes Scholars, and Turing Award winners.",
+    "admissionDates": {
+      "start": "2025-01-28",
+      "end": "2025-05-15"
+    },
+    "events": [
+      "Environmental Sustainability Forum",
+      "Global Tech Startup Conference",
+      "Cultural Diversity Week"
+    ],
+    "researchHistory": "UC Berkeley has made groundbreaking contributions in physics, computer science, and public health, including the discovery of elements like plutonium.",
+    "sports": ["Soccer", "Swimming", "Track and Field", "Football"],
+    "rating": "5"
+  },
+  {
+    "name": "Columbia University",
+    "image": "https://i.ibb.co.com/WBcd7dX/11.png",
+    "details": "Columbia University, located in New York City and founded in 1754, is one of the Ivy League's most prestigious institutions. With its prime location in Manhattan, Columbia offers unparalleled opportunities for cultural and professional development. Known for its core curriculum, the university ensures a well-rounded education with a strong emphasis on critical thinking and global citizenship. Columbia is also a leader in fields such as journalism, medicine, and international relations, hosting one of the most diverse student populations in the world. Its historic campus is home to iconic landmarks like the Low Memorial Library and Butler Library.",
+    "admissionDates": {
+      "start": "2025-02-01",
+      "end": "2025-05-25"
+    },
+    "events": [
+      "Pulitzer Prize Journalism Panel",
+      "International Relations Forum",
+      "Arts and Culture Festival"
+    ],
+    "researchHistory": "Columbia has pioneered advancements in medical research, journalism, and climate science, contributing to global problem-solving initiatives.",
+    "sports": ["Basketball", "Fencing", "Rowing", "Track and Field"],
+    "rating": "4"
+  },
+  {
+    "name": "University of Michigan",
+    "image": "https://i.ibb.co.com/mzjspPd/12.png",
+    "details": "The University of Michigan, located in Ann Arbor, Michigan, is one of the leading public universities in the United States. Founded in 1817, it is renowned for its excellence in research, athletics, and academics. Michigan offers a wide range of programs across disciplines such as business, engineering, medicine, and the arts. Its vibrant campus life is enriched by a diverse student body, cutting-edge facilities, and a strong sense of community. The university is also known for its successful athletic teams, particularly in football, which foster school spirit and pride among students and alumni.",
+    "admissionDates": {
+      "start": "2025-02-05",
+      "end": "2025-05-30"
+    },
+    "events": [
+      "Big Ten Sports Festival",
+      "Entrepreneurship Conference",
+      "Arts and Innovation Gala"
+    ],
+    "researchHistory": "The University of Michigan has made significant contributions to healthcare innovation, automotive engineering, and social science research.",
+    "sports": ["Football", "Basketball", "Ice Hockey", "Swimming"],
+    "rating": "5"
+  },
+  {
+    "name": "California Institute of Technology (Caltech)",
+    "image": "https://i.ibb.co.com/hgxBgYb/13.png",
+    "details": "California Institute of Technology, commonly known as Caltech, is a world-renowned institution located in Pasadena, California, specializing in science and engineering. Established in 1891, Caltech has consistently driven innovation and discovery in fields like space exploration, robotics, and quantum physics. The university fosters a close-knit community of scholars, with a low student-to-faculty ratio and access to cutting-edge laboratories such as NASA’s Jet Propulsion Laboratory (JPL). Caltech emphasizes a rigorous academic curriculum complemented by opportunities for interdisciplinary research, making it one of the top destinations for aspiring scientists and engineers.",
+    "admissionDates": {
+      "start": "2025-03-01",
+      "end": "2025-06-15"
+    },
+    "events": [
+      "TechFest Annual Innovation Conference",
+      "Astronomy Night at JPL",
+      "Sustainability Research Symposium"
+    ],
+    "researchHistory": "Caltech has made groundbreaking contributions to space exploration, artificial intelligence, and renewable energy research, with an impressive roster of Nobel laureates.",
+    "sports": ["Basketball", "Soccer", "Tennis", "Swimming"],
+    "rating": "5"
+  },
+  {
+    "name": "Duke University",
+    "image": "https://i.ibb.co.com/KK2yLH8/14.png",
+    "details": "Duke University, located in Durham, North Carolina, is a prestigious private research university founded in 1838. Known for its academic rigor and vibrant campus life, Duke excels in fields like medicine, law, business, and environmental sciences. Its sprawling campus features iconic landmarks such as the Duke Chapel and Sarah P. Duke Gardens, providing a serene yet intellectually stimulating environment. Duke fosters a global perspective through its study-abroad programs and interdisciplinary research initiatives. The university is also home to top-tier athletic programs, particularly in basketball, which has earned national recognition and built a loyal fan base.",
+    "admissionDates": {
+      "start": "2025-02-15",
+      "end": "2025-06-01"
+    },
+    "events": [
+      "Global Health Symposium",
+      "Annual Entrepreneurship Summit",
+      "Art and Music Festival"
+    ],
+    "researchHistory": "Duke University has pioneered research in cancer treatment, environmental conservation, and neuroscience, advancing solutions to critical global challenges.",
+    "sports": ["Basketball", "Soccer", "Golf", "Lacrosse"],
+    "rating": "5"
+  },
+  {
+    "name": "Northwestern University",
+    "image": "https://i.ibb.co.com/7SgSWkW/15.png",
+    "details": "Northwestern University, founded in 1851, is located in Evanston, Illinois, with additional campuses in Chicago and Qatar. Renowned for its strong emphasis on research and interdisciplinary education, Northwestern offers programs across disciplines such as communication, business, engineering, and journalism. Its vibrant campus community thrives on diversity, creativity, and innovation, while its proximity to Chicago provides students with unparalleled professional and cultural opportunities. Northwestern’s alumni network is a testament to its global influence, producing leaders in fields ranging from arts and media to law and medicine.",
+    "admissionDates": {
+      "start": "2025-02-20",
+      "end": "2025-06-10"
+    },
+    "events": [
+      "Northwestern Research Expo",
+      "Performing Arts Showcase",
+      "Global Leaders Dialogue"
+    ],
+    "researchHistory": "Northwestern is at the forefront of materials science, nanotechnology, and media innovation, with a legacy of transformative discoveries.",
+    "sports": ["Football", "Basketball", "Tennis", "Swimming"],
+    "rating": "4"
+  },
+  {
+    "name": "University of Texas at Austin",
+    "image": "https://i.ibb.co.com/5KLFZ5j/16.png",
+    "details": "The University of Texas at Austin, established in 1883, is a leading public research university located in the vibrant city of Austin, Texas. UT Austin offers a wide range of programs, including business, engineering, and the arts, and is celebrated for its cutting-edge research facilities and dynamic campus culture. The university has a strong tradition of fostering creativity, innovation, and community engagement. Its iconic Tower and lively sports culture add to the vibrant student experience. UT Austin is also known for its contributions to technology and entrepreneurship, particularly in the energy and technology sectors.",
+    "admissionDates": {
+      "start": "2025-03-05",
+      "end": "2025-06-20"
+    },
+    "events": [
+      "Texas Entrepreneurship Summit",
+      "Cultural Diversity Week",
+      "Tech and Innovation Expo"
+    ],
+    "researchHistory": "UT Austin has been instrumental in advancing renewable energy research, artificial intelligence, and public policy initiatives, making a global impact.",
+    "sports": ["Football", "Baseball", "Track and Field", "Soccer"],
+    "rating": "4"
+  },
+  {
+    "name": "University of Washington",
+    "image": "https://i.ibb.co.com/m9xfPWy/17.png",
+    "details": "The University of Washington (UW), located in Seattle, Washington, is a world-class public research university established in 1861. Known for its innovation and academic excellence, UW has a strong emphasis on fields such as technology, medicine, and environmental science. Its picturesque campus, nestled near the Puget Sound and Mount Rainier, provides a stunning backdrop for learning and research. UW has a vibrant student community, a strong focus on sustainability, and a legacy of groundbreaking discoveries, particularly in health sciences and technology.",
+    "admissionDates": {
+      "start": "2025-03-10",
+      "end": "2025-06-30"
+    },
+    "events": [
+      "Tech for Good Conference",
+      "Healthcare Innovation Expo",
+      "Environmental Awareness Week"
+    ],
+    "researchHistory": "UW has led advancements in machine learning, clinical medicine, and sustainable energy solutions, impacting global research landscapes.",
+    "sports": ["Rowing", "Basketball", "Soccer", "Track and Field"],
+    "rating": "5"
+  },
+  {
+    "name": "Cornell University",
+    "image": "https://i.ibb.co.com/8dKB2J5/18.png",
+    "details": "Cornell University, founded in 1865 and located in Ithaca, New York, is a member of the Ivy League and a leader in both education and research. Known for its unique blend of liberal arts and practical sciences, Cornell offers programs in agriculture, engineering, law, and hospitality management, among others. Its stunning campus, overlooking Cayuga Lake, features historic architecture alongside modern research facilities. Cornell is committed to fostering innovation and global engagement, preparing students to tackle pressing global challenges while fostering a spirit of collaboration and excellence.",
+    "admissionDates": {
+      "start": "2025-02-25",
+      "end": "2025-06-25"
+    },
+    "events": [
+      "Global Agricultural Conference",
+      "Annual Law Symposium",
+      "Culinary Arts Festival"
+    ],
+    "researchHistory": "Cornell has made significant contributions in veterinary medicine, food science, and agricultural engineering, driving progress in essential industries.",
+    "sports": ["Ice Hockey", "Basketball", "Lacrosse", "Swimming"],
+    "rating": "5"
+  }
+]
