@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <nav className="flex items-center justify-between p-2">
             <div id="nav-left">
-                <Link to={"/"} className="text-2xl font-semibold" >My College</Link>
+                <Link to={"/"} className="text-2xl font-bold" >MyCollege</Link>
             </div>
             <div id="nav-middle">
                 <ul className="flex items-center">

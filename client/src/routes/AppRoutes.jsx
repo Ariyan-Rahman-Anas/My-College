@@ -49,11 +49,15 @@ const AppRoutes = createBrowserRouter([
             },
             {
                 path: "/admission",
-                element:<AdmissionPage />
+                element: <PrivateRoute>
+                    <AdmissionPage />
+                </PrivateRoute> 
             },
             {
                 path: "/my-college",
-                element:<MyCollegesPage />
+                element: <PrivateRoute>
+                    <MyCollegesPage />
+                </PrivateRoute>
             }
         ]
     }

@@ -36,7 +36,7 @@ const SearchCollege = () => {
                         name="search"
                         required
                         defaultValue={searchKey}
-                        placeholder="Search your College"
+                        placeholder="Search College"
                         className="w-full rounded-r-none rounded-l-md p-3 focus:outline-none border-[0.09rem] border-gray-200 focus:border-black border-r-0 "
                     />
                     <button className="rounded-l-none bg-black hover:bg-gray-800 text-white rounded-r-md px-6 py-3 border-[0.09rem] font-semibold border-black" >Search</button>

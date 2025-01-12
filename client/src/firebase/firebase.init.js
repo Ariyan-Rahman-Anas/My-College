@@ -3,7 +3,6 @@ import { getAnalytics } from "firebase/analytics";
 
 
 const firebaseConfig = {
-  //   apiKey: "AIzaSyD-w66WAM0BROTgPSSC3T7cXk2AqkSI98k",
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "my-clg-edu.firebaseapp.com",
   projectId: "my-clg-edu",
