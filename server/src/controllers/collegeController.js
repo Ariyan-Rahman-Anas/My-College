@@ -55,29 +55,34 @@ export const getSingleCollege = async (req, res, next) => {
 
 export const searchCollege = async (req, res, next) => {
     try {
-        const { name } = req.query; // Get the "name" query parameter
-        if (!name) {
+        const key = req.params.key;
+
+        if (!key) {
             return res.status(400).json({
                 success: false,
-                message: "Please provide a college name to search.",
+                message: "Search key is required",
             });
         }
 
-        const colleges = await CollegeModel.find({
-            name: { $regex: name, $options: "i" }, // Case-insensitive search
+        // Perform a case-insensitive search
+        const queryData = await CollegeModel.find({
+            name: { $regex: key, $options: "i" },
         });
 
-        if (colleges.length < 1) {
+        // If no results are found
+        if (queryData.length === 0) {
             return res.status(404).json({
                 success: false,
-                message: "No colleges found matching the provided name.",
+                message: "No colleges found matching the search criteria",
             });
         }
 
+        // Success response
         res.status(200).json({
             success: true,
-            message: "Colleges fetched successfully based on the search query.",
-            colleges,
+            message: "Colleges fetched successfully",
+            totalColleges: queryData.length,
+            queryData,
         });
     } catch (error) {
         next(error);

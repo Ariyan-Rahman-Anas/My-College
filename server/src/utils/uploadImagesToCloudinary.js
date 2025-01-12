@@ -1,19 +1,28 @@
 import { v2 as cloudinary } from "cloudinary";
 import { Readable } from "stream";
+import config from "../config/config.js";
 
-// Helper function to upload a single image to Cloudinary
+// Cloudinary configuration
+cloudinary.config({
+  cloud_name: config.cloudinary_cloud_name,
+  api_key: config.cloudinary_api_key,
+  api_secret: config.cloudinary_api_secret,
+});
+
+
 export const uploadImageToCloudinary = async (file) => {
     return new Promise((resolve, reject) => {
-        // Create a Readable stream from the file buffer
         const readableStream = new Readable();
         readableStream.push(file.buffer);
-        readableStream.push(null); // End of the stream
+        readableStream.push(null);
 
-        // Cloudinary upload stream
         const uploadStream = cloudinary.uploader.upload_stream(
-            { folder: "products" }, // Folder in Cloudinary
+            { folder: "products" },
             (error, result) => {
-                if (error) return reject(error);
+                if (error) {
+                    console.error("Cloudinary Upload Error:", error);
+                    return reject(error);
+                }
                 resolve({
                     public_id: result.public_id,
                     url: result.secure_url,
@@ -21,7 +30,6 @@ export const uploadImageToCloudinary = async (file) => {
             }
         );
 
-        // Pipe the readable stream to Cloudinary's upload stream
         readableStream.pipe(uploadStream);
     });
 };

@@ -9,9 +9,14 @@ const collegeApi = baseApi.injectEndpoints({
             }
         }),
         getACollege: builder.query({
-            query:(collegeId)=>`colleges/${collegeId}`
+            query: (collegeId) => `colleges/${collegeId}`
+        }),
+        searchColleges: builder.query({
+            query: (key) => {
+                return `/colleges/search/${key}`;
+            }
         })
     })
 });
 
-export const { useGetCollegesQuery, useGetACollegeQuery } = collegeApi
+export const { useGetCollegesQuery, useGetACollegeQuery, useSearchCollegesQuery } = collegeApi

@@ -5,6 +5,6 @@ const router = express.Router()
 
 router.get("/list", collegeList)
 router.get("/:id", getSingleCollege)
-router.get("/search", searchCollege); 
+router.get("/search/:key", searchCollege); 
 
 export default router;

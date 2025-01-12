@@ -54,6 +54,7 @@ export const createMyCollege = async (req, res, next) => {
         });
     } catch (error) {
         next(error);
+        console.log("err is " + error.message)
     }
 };
 

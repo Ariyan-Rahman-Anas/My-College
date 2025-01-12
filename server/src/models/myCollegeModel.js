@@ -40,7 +40,7 @@ const myCollegeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-}, { timeseries: true, versionKey: false });
+}, { timestamps: true, versionKey: false });
 
 const MyCollegeModel = mongoose.model("myCollege", myCollegeSchema)
 export default MyCollegeModel
