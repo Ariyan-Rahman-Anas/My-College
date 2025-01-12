@@ -2,13 +2,13 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import config from "./config/config.js";
-import { connectDB } from "./utils/connectDB.js";
+import config from "./src/config/config.js";
+import { connectDB } from "./src/utils/connectDB.js";
 dotenv.config();
 
-import userRoute from "./routes/userRoute.js"
-import collegeRoute from "./routes/collegeRoute.js";
-import myCollegeRoute from "./routes/myCollegeRoute.js";
+import userRoute from "./src/routes/userRoute.js"
+import collegeRoute from "./src/routes/collegeRoute.js";
+import myCollegeRoute from "./src/routes/myCollegeRoute.js";
 
 const app = express();
 const port = config.port || 3001;
