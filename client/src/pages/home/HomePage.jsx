@@ -1,3 +1,5 @@
+import CollegeReviews from "@/components/home/CollegeReviews"
+import GraduatesGallery from "@/components/home/GraduatesGallery"
 import Hero from "@/components/home/Hero"
 import HowItWorks from "@/components/home/HowItWorks"
 import KeyService from "@/components/home/KeyService"
@@ -12,6 +14,8 @@ const HomePage = () => {
       </div>
       <KeyService />
       <HowItWorks />
+      <GraduatesGallery />
+      <CollegeReviews />
     </div>
   )
 }

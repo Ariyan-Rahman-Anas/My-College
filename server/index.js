@@ -9,6 +9,7 @@ dotenv.config();
 import userRoute from "./src/routes/userRoute.js"
 import collegeRoute from "./src/routes/collegeRoute.js";
 import myCollegeRoute from "./src/routes/myCollegeRoute.js";
+import clgReviewRoute from "./src/routes/clgReviewRoute.js";
 
 const app = express();
 const port = config.port || 3001;
@@ -39,6 +40,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", userRoute);
 app.use("/api/colleges", collegeRoute);
 app.use("/api/my-college", myCollegeRoute);
+app.use("/api/reviews", clgReviewRoute);
 
 connectDB()
   .then(() => {

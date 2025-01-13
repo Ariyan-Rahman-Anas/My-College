@@ -20,7 +20,7 @@ export const createMyCollege = async (req, res, next) => {
         if (!image) {
             return res.status(400).json({
                 success: false,
-                message: "Image is required",
+                message: "Please provide your image",
             });
         }
 

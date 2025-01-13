@@ -4,12 +4,18 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { usePostMyCollegeMutation } from "@/redux/features/myCollegeApi";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import IsRTKLoadingLoader from "./IsRTKLoadingLoader";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const AddClgDialog = ({ openModal, setOpenModal }) => {
+const AddClgDialog = ({ openModal, setOpenModal, clgId }) => {
 
+    const navigate = useNavigate()
+    const [file, setFile] = useState(null)
+
+    const { name, email } = useSelector(state => state?.auth?.user)
     const {
         register,
         handleSubmit,
@@ -17,17 +23,7 @@ const AddClgDialog = ({ openModal, setOpenModal }) => {
         reset,
     } = useForm();
 
-    const [postMyCollege, {data, isLoading, isSuccess, error}] = usePostMyCollegeMutation()
-
-
-    // // Form submission handler
-    // const handleOnSubmit = (formData) => {
-    //     postMyCollege(formData)
-    //     console.log("Submitted Form Data:", formData);
-    //     reset();
-    //     setOpenModal(false); // Close the modal
-    // };
-
+    const [postMyCollege, { data, isLoading, isSuccess, error }] = usePostMyCollegeMutation()
 
     // Handle Form Submission
     const handleOnSubmit = (formData) => {
@@ -36,13 +32,16 @@ const AddClgDialog = ({ openModal, setOpenModal }) => {
             formDataObj.append(key, value);
         });
 
-        postMyCollege(formDataObj); // Send data to the backend
+        formDataObj.append("college", clgId);
+
+        if (file) {
+            formDataObj.append("image", file);
+        }
+
+        postMyCollege(formDataObj); 
         reset();
-        setOpenModal(false); // Close modal
+        setOpenModal(false);
     };
-
-
-
 
     useEffect(() => {
         if (error) {
@@ -51,8 +50,9 @@ const AddClgDialog = ({ openModal, setOpenModal }) => {
 
         if (isSuccess) {
             toast.success(data?.message)
+            navigate(`/my-college`)
         }
-    },[data?.message,error,isSuccess])
+    }, [data?.message, error, isSuccess, navigate])
 
 
     if (isLoading) {
@@ -82,6 +82,7 @@ const AddClgDialog = ({ openModal, setOpenModal }) => {
                                         id="name"
                                         type="text"
                                         placeholder="College Name"
+                                        defaultValue={name}
                                     />
                                     {errors.name && (
                                         <p className="text-red-500 text-sm">{errors.name.message}</p>
@@ -98,6 +99,7 @@ const AddClgDialog = ({ openModal, setOpenModal }) => {
                                         id="email"
                                         type="email"
                                         placeholder="example@example.com"
+                                        defaultValue={email}
                                     />
                                     {errors.email && (
                                         <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -159,7 +161,9 @@ const AddClgDialog = ({ openModal, setOpenModal }) => {
                                     <Input
                                         {...register("image", { required: "Image is required" })}
                                         id="image"
+                                        name="image"
                                         type="file"
+                                        onChange={(e) => setFile(e.target.files[0])}
                                     />
                                     {errors.image && (
                                         <p className="text-red-500 text-sm">{errors.image.message}</p>

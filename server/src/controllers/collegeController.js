@@ -1,6 +1,6 @@
 import CollegeModel from "../models/collegeModel.js"
 
-export const collegeList = async (req, res, next) => {
+export const collegeListWithPagination = async (req, res, next) => {
     try {
       const page = parseInt(req.query.page) || 1;
       const limit = parseInt(req.query.limit) || 6;
@@ -31,6 +31,27 @@ export const collegeList = async (req, res, next) => {
      next(error)   
     }
 }
+
+
+export const allCollege = async (req, res, next) => {
+    try {
+        const colleges = await CollegeModel.find({})
+        if (colleges?.length < 1) {
+            res.status(404).json({
+                success: false,
+                message: "No colleges found",
+            });
+        }
+        res.status(200).json({
+            success: true,
+            message: "Colleges fetched successfully",
+            totalColleges: colleges.length,
+            colleges,
+        })
+    } catch (error) {
+        next(error)
+    }
+} 
 
 
 export const getSingleCollege = async (req, res, next) => {

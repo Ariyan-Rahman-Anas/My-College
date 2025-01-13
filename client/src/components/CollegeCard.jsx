@@ -5,7 +5,10 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 
 const CollegeCard = ({ clg }) => {
-    const { _id, name, image, rating, admissionDates, researchHistory } = clg || {};
+
+    console.log("clg",clg)
+
+    const { _id, name, image, rating, admissionDates, researchHistory,sports, events } = clg || {};
     const [loading, setLoading] = useState(true);
     const [progress, setProgress] = useState(0);
     const [loadedImage, setLoadedImage] = useState(null);
@@ -68,8 +71,10 @@ const CollegeCard = ({ clg }) => {
                         <Star size={15} color="black" fill="black" />
                     </div>
                 </div>
-                <p className="mt-3">Admission start on: {admissionDates.start.slice(0, 10)} </p>
-                <p>Research paper: {numberOfResearch.length}</p>
+                <p className="mt-3">Admission start on: {admissionDates?.start.slice(0, 10)} </p>
+                <p>Research paper: {numberOfResearch?.length}</p>
+                <p>Running Events: {events?.length}</p>
+                <p>Running Sports: {sports?.length}</p>
             </div>
             <Link to={`/colleges/${_id}`} className="absolute bottom-2 right-2 " >
                     <Button>

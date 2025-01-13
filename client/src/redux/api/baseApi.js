@@ -7,5 +7,6 @@ export const baseApi = createApi({
     // baseUrl: import.meta.env.VITE_SERVER_URL,
     credentials: "include",
   }),
+  tagTypes: ["college", "myCollege", "clgReview"],
   endpoints: () => ({}),
 });

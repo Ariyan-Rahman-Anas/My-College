@@ -35,7 +35,6 @@ const LoginPage = () => {
       });
       toast.error(error.data?.message);
     }
-
     if (isSuccess && data?.token) {
       dispatch(setUser({
         user: data.user,

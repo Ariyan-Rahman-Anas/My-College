@@ -1,3 +1,4 @@
+import GoogleAuth from "@/components/googleAuth/GoogleAuth";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -53,7 +54,6 @@ const RegistrationPage = () => {
         </CardHeader>
         <form
         onSubmit={handleSubmit(handleRegistration)}
-
         >
           <CardContent>
             <div className="grid gap-2">
@@ -84,7 +84,6 @@ const RegistrationPage = () => {
                   placeholder="name@example.com"
                 />
               </div>
-
 
               <div className="grid gap-.5">
                   <Label htmlFor="password">Password
@@ -117,9 +116,8 @@ const RegistrationPage = () => {
                   ) : "Registration"
                 }
               </Button>
-              <Button className="w-fit mx-auto">Continue with Google</Button>
+              <GoogleAuth />
             </div>
-
 
             <div className="mt-4 text-center text-sm">
               Already have an account?{" "}

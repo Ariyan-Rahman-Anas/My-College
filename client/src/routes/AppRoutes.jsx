@@ -12,8 +12,7 @@ const CollegesPage = lazy(() => import("./../pages/colleges/CollegesPage"));
 const CollegeDetailsPage = lazy(() => import("./../pages/college-details/CollegeDetailsPage"));
 const AdmissionPage = lazy(() => import("./../pages/admission/AdmissionPage"));
 const MyCollegesPage = lazy(() => import("../pages/myColleges/MyCollegesPage"));
-
-
+const UserProfile = lazy(() => import("../pages/userProfile/UserProfile"));
 
 const AppRoutes = createBrowserRouter([
     {
@@ -58,7 +57,13 @@ const AppRoutes = createBrowserRouter([
                 element: <PrivateRoute>
                     <MyCollegesPage />
                 </PrivateRoute>
-            }
+            },
+            {
+                path: "/user-profile",
+                element: <PrivateRoute>
+                    <UserProfile />
+                </PrivateRoute>
+            },
         ]
     }
 ])

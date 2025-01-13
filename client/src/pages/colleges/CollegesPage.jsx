@@ -2,12 +2,12 @@ import CollegeCard from "@/components/CollegeCard";
 import IsRTKLoadingLoader from "@/components/IsRTKLoadingLoader";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { useGetCollegesQuery } from "@/redux/features/collegeApi";
+import { useGetCollegesWithPaginationQuery } from "@/redux/features/collegeApi";
 
 const CollegesPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
-    const { data, isLoading, error } = useGetCollegesQuery({page:currentPage});
+    const { data, isLoading, error } = useGetCollegesWithPaginationQuery({page:currentPage});
 
     // Handler for changing the page
     const handlePageChange = (page) => {

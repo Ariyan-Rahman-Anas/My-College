@@ -4,10 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 import { Button } from "../ui/button";
 import { app } from "@/firebase/firebase.init";
+import { useGoogleAuthMutation } from "@/redux/features/auth/authApi";
+import { useEffect } from "react";
+import { toast } from "sonner";
+import { setUser } from "@/redux/features/auth/authSlice";
 
 const GoogleAuth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [googleAuth, {data, isSuccess, error}] = useGoogleAuthMutation()
 
   // Google auth handler--
   const googleAuthHandler = async () => {
@@ -16,29 +21,33 @@ const GoogleAuth = () => {
       const auth = getAuth(app);
       const result = await signInWithPopup(auth, provider);
 
-      const response = await fetch(`${backendUrl}/api/v1/auth/google`, {
-        method: "POST",
-        body: JSON.stringify({
-          name: result.user.displayName,
-          email: result.user.email,
-          avatar: result.user.photoURL,
-        }),
-      });
-      const data = await response.json();
-
-      if (response.ok) {
-        dispatch(loginSuccess(data.user));
-        dispatch(successMessage(data.message));
-        navigate("/");
-      } else {
-        dispatch(loginFail());
+      console.log({ result })
+      
+      const credentials = {
+        name: result.user.displayName,
+        email:result.user.email
       }
+      await googleAuth(credentials).unwrap()
+
     } catch (err) {
-      dispatch(loginFail());
-      dispatch(errorMessage(err?.message));
+        console.log("ok", err.message)
     }
-    };
-    
+  };
+  console.log("Data",data)
+  
+  useEffect(() => {
+    if (error) {
+      toast.error(error?.data?.message)
+    }
+    if (isSuccess) {
+      toast.success(data?.message)
+            dispatch(setUser({
+        user: data?.user,
+        token:data?.token
+            }))
+      navigate("/");
+    }
+  },[data?.message, error, isSuccess,data?.token,data?.user,navigate,dispatch])
     
   return (
     <Button
@@ -49,5 +58,4 @@ const GoogleAuth = () => {
     </Button>
   );
 };
-
 export default GoogleAuth;

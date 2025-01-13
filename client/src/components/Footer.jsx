@@ -37,7 +37,7 @@ const Footer = () => {
   const fullYear = today.getFullYear()
 
   return (
-    <footer className="bg-black text-gray-300 mt-6 " >
+    <footer className="bg-black text-gray-300" >
       <div className="px-4 md:px-8 pt-16 pb-8 flex flex-col lg:flex-row gap-10 ">
         <div id="support" className="space-y-4 w-full lg:w-[40%] " >
           <Link to={"/"} className="text-3xl " >

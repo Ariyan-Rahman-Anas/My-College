@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='min-h-screen relative bg-gray-100 '>
       <Header />
-      <div className='pb-20'>
+      <div className='py-4'>
       <Outlet />
       </div>
       <Footer/>
