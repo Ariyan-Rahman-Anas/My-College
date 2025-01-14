@@ -41,6 +41,22 @@ const authApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["user"],
     }),
+    forgotPassword: builder.mutation({
+      query: (email) => ({
+        url: "/users/forgot-session",
+        method: "POST",
+        body: email ,
+      }),
+      invalidatesTags: ["user"]
+    }),
+    resetPassword: builder.mutation({
+      query: (email, password) => ({
+        url: "/users/reset-password",
+        method: "PATCH",
+        body: email, password,
+      }),
+      invalidatesTags: ["user"]
+    })
   }),
 });
 
@@ -48,5 +64,7 @@ export const {
   useRegistrationMutation,
   useLoginMutation, useGoogleAuthMutation,
   useLogoutMutation,
-  useUpdateProfileMutation
+  useUpdateProfileMutation,
+  useForgotPasswordMutation,
+  useResetPasswordMutation
 } = authApi

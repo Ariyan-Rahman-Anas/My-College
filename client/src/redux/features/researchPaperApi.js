@@ -12,5 +12,4 @@ const researchPaperApi = baseApi.injectEndpoints({
         })
     })
 })
-
 export const { useAllResearchPapersQuery, useResearchPaperDetailQuery } = researchPaperApi;

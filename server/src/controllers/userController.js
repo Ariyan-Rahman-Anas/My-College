@@ -25,15 +25,6 @@ export const userRegistration = async (req, res, next) => {
       });
     }
 
-    // Validate password strength
-    // const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    // if (!regex.test(password)) {
-    //     return res.status(400).json({
-    //         success: false,
-    //         message: 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character'
-    //     });
-    // }
-
     // Step 1: Check for minimum length
     if (password.length < 8) {
       return res.status(400).json({
@@ -92,6 +83,7 @@ export const userRegistration = async (req, res, next) => {
   }
 }
 
+
 //login user
 export const userLogin = async (req, res, next) => {
   try {
@@ -138,6 +130,7 @@ export const userLogin = async (req, res, next) => {
   }
 }
 
+
 // google auth
 export const googleAuth = async (req, res, next) => {
   try {
@@ -180,6 +173,7 @@ export const googleAuth = async (req, res, next) => {
   }
 };
 
+
 //logout user
 export const userLogout = async (req, res, next) => {
   try {
@@ -192,6 +186,7 @@ export const userLogout = async (req, res, next) => {
     next(error)
   }
 }
+
 
 // update user profile / information
 export const updateUserProfile = async (req, res, next) => {
@@ -253,7 +248,80 @@ export const updateUserProfile = async (req, res, next) => {
       message: "Profile updated successfully",
       user,
     });
+  } catch (error) {
+    next(error)
+  }
+}
 
+
+export const forgotPasswordSession = async (req, res, next) => {
+  try {
+    const { email } = req.body
+    console.log("email fro session", email)
+    const user = await UserModel.findOne({ email })
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      message: "Password reset session active.",
+      user,
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+
+
+export const resetPassword = async (req, res, next) => {
+  try {
+    const { password, email } = req.body
+    const user = await UserModel.findOne({ email });
+    console.log({email,password})
+    if (!password) {
+      return res.status(400).json({
+        success: false,
+        message: "Password is required",
+      });
+    }
+
+    if (password) {
+      if (password.length < 8) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must be at least 8 characters long",
+        });
+      }
+      if (!/[A-Za-z]/.test(password)) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must contain at least one letter",
+        });
+      }
+      if (!/\d/.test(password)) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must contain at least one number",
+        });
+      }
+      if (!/[@$!%*?&]/.test(password)) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must contain at least one special character",
+        });
+      }
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+      user.password = hashedPassword;
+    }
+    await user.save()
+    res.status(200).json({
+      success: true,
+      message: "Password reset successful",
+    });
   } catch (error) {
     next(error)
   }

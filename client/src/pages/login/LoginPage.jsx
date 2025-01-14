@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleAuth from "@/components/googleAuth/GoogleAuth";
 import { useLoginMutation } from "@/redux/features/auth/authApi";
 import { setUser } from "@/redux/features/auth/authSlice";
+import ResetPassword from "./ResetPassword";
 
 const LoginPage = () => {
   const navigate =  useNavigate()
@@ -47,7 +48,7 @@ const LoginPage = () => {
 
   return (
     <div className="flex items-center justify-center px-2">
-      <Card className="w-full md:w-1/2 lg:w-1/3 mx-auto p- ">
+      <Card className="w-full md:w-1/2 lg:w-1/3 mx-auto">
         <CardHeader>
           <CardTitle className="text-2xl">
             Login
@@ -107,14 +108,18 @@ const LoginPage = () => {
               </Button>
               <GoogleAuth />
             </div>
-            <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <Link to="/registration" className="underline font-medium ">
-                Registration
-              </Link>
-            </div>
           </CardContent>
         </form>
+
+        <ResetPassword />
+
+        <div className="mt-4 text-center text-sm">
+          Don&apos;t have an account?{" "}
+          <Link to="/registration" className="underline font-medium ">
+            Registration
+          </Link>
+        </div>
+
       </Card>
     </div>
   )
