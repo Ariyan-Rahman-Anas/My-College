@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className='min-h-screen relative bg-gray-100 '>
+    <div className='min-h-screen max-w-[1920px] mx-auto relative bg-gray-100 '>
       <Header />
       <div className='py-4'>
       <Outlet />
