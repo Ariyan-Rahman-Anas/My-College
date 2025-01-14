@@ -1,8 +1,8 @@
 import bcrypt from "bcrypt"
 import UserModel from './../models/userModel.js';
-import config from "../config/config.js";
 import { generateToken, sendTokenInCookie } from "../utils/generateJWT.js";
 
+// register user
 export const userRegistration = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
@@ -92,7 +92,7 @@ export const userRegistration = async (req, res, next) => {
   }
 }
 
-
+//login user
 export const userLogin = async (req, res, next) => {
   try {
     const { email, password } = req.body
@@ -180,7 +180,7 @@ export const googleAuth = async (req, res, next) => {
   }
 };
 
-
+//logout user
 export const userLogout = async (req, res, next) => {
   try {
     res.clearCookie("token");

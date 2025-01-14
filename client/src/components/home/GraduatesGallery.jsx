@@ -1,6 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { Button } from "../ui/button";
 
 import one from "./../../assets/graduatesGallery/1.jpg";
 import two from "./../../assets/graduatesGallery/2.jpg";
@@ -66,7 +65,13 @@ const GraduatesGallery = () => {
 
   return (
     <div className="space-y-4">
-      <h1 className="heading">{`Graduate's Gallery`} </h1>
+      <div className="text-center space-y-1.5" >
+        <h1 className="heading">{`Graduate's Gallery`} </h1>
+        <p className="text-gray-500">
+          {`Discover the world's top colleges, by graduating from our prestigious universities. View our graduate's photos and read their testimonials.`}
+        </p>
+      </div>
+
       <div
       className="w-full h-full md:h-[95vh] sm:h96 md:h[540px] rounded-lg flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
     >

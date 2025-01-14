@@ -26,7 +26,6 @@ export const postReview = async (req, res, next) => {
     }
 }
 
-
 export const getReviewsByClg = async (req, res, next) => {
     try {
         const { clgId } = req.query

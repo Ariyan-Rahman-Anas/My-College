@@ -10,6 +10,7 @@ import userRoute from "./src/routes/userRoute.js"
 import collegeRoute from "./src/routes/collegeRoute.js";
 import myCollegeRoute from "./src/routes/myCollegeRoute.js";
 import clgReviewRoute from "./src/routes/clgReviewRoute.js";
+import researchPaperRoute from "./src/routes/researchPaperRoute.js";
 
 const app = express();
 const port = config.port || 3001;
@@ -40,6 +41,7 @@ app.use("/api/users", userRoute);
 app.use("/api/colleges", collegeRoute);
 app.use("/api/my-college", myCollegeRoute);
 app.use("/api/reviews", clgReviewRoute);
+app.use("/api/research", researchPaperRoute);
 
 connectDB()
   .then(() => {

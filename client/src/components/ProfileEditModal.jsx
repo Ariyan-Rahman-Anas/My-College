@@ -7,45 +7,28 @@ import { useForm } from "react-hook-form";
 import { useUpdateProfileMutation } from "@/redux/features/auth/authApi";
 import { toast } from "sonner";
 import { useSelector } from "react-redux";
-import { CardTitle } from "./ui/card";
 
 const ProfileEditModal = () => {
-
   const {_id} = useSelector(state=>state?.auth?.user)
   const [openModal, setOpenModal] = useState(false);
-
 
   const {
     register,
     handleSubmit,
-    setError, reset
+     reset
   } = useForm()
 
   const [updateProfile, { data, isLoading, error, isSuccess }] = useUpdateProfileMutation({userId:_id})
 
-  // const handleUpdate = (formData) => {
-  //    const data = {
-  //   name: formData?.name,
-  //   email: formData?.email,
-  //   password: formData?.password,
-  //   };
-  //   updateProfile(data)
-    
-  // }
-
   const handleUpdate = (formData) => {
   const data = {
-    userId: _id, // Ensure _id (current user ID) is available from context, props, or state
+    userId: _id,
     name: formData?.name,
     email: formData?.email,
     password: formData?.password,
   };
-  updateProfile(data); // Pass data object containing userId and updated fields
+  updateProfile(data);
 };
-
-
-
-  console.log({error})
 
   useEffect(() => {
     if (error) {
@@ -132,8 +115,6 @@ const ProfileEditModal = () => {
                     } 
                 </Button>
               </div>
-
-
             </form>
           </div>
         </div>

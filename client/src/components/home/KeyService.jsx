@@ -31,7 +31,10 @@ const KeyService = () => {
 
   return (
       <div className="space-y-4">
-          <h1 className="heading">Key Services</h1>
+          <div className="text-center space-y-1.5">
+              <h1 className="heading">Key Services</h1>
+              <p className="text-gray-600" >Our mission is to provide a comprehensive, convenient, and affordable education experience for our students.</p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {

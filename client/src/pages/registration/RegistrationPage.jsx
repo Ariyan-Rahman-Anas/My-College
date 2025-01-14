@@ -11,7 +11,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const RegistrationPage = () => {
-
   const navigate = useNavigate()
   const {
     register,
@@ -20,11 +19,9 @@ const RegistrationPage = () => {
   } = useForm()
 
   const [registration, { data, isLoading, error, isSuccess }] = useRegistrationMutation()
-
   const handleRegistration = (formData) => {
     registration(formData)
   } 
-
   useEffect(() => {
     if (error?.data) {
       setError("root.random", {
@@ -130,5 +127,4 @@ const RegistrationPage = () => {
     </div>
   )
 }
-
 export default RegistrationPage

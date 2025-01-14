@@ -6,7 +6,6 @@ import { Button } from "./ui/button";
 import { usePostMyCollegeMutation } from "@/redux/features/myCollegeApi";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import IsRTKLoadingLoader from "./IsRTKLoadingLoader";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

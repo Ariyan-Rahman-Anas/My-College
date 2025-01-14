@@ -23,7 +23,10 @@ const HowItWorks = () => {
 
   return (
       <div className="space-y-4">
-          <h1 className="heading ">How It works</h1>
+          <div className="text-center space-y-1.5">
+              <h1 className="heading ">How It works</h1>
+              <p className="text-gray-600" >Quick and hassle-free booking for every need; Find the perfect space for your study or learning session.</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full md:w-[85%] mx-auto">
                          {
                             works.map(({ title, description, icon }, idx) => <Card key={idx}>

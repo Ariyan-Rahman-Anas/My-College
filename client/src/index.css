@@ -8,5 +8,5 @@
 }
 
 .heading{
-  @apply text-2xl underline underline-offset-4 font-semibold text-center
+  @apply text-2xl underline underline-offset-4 font-semibold
 }
