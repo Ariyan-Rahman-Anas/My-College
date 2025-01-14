@@ -1,4 +1,5 @@
 import { uploadImageToCloudinary } from './../utils/uploadImagesToCloudinary.js';
+
 import MyCollegeModel from './../models/myCollegeModel.js';
 
 export const createMyCollege = async (req, res, next) => {
@@ -57,7 +58,6 @@ export const createMyCollege = async (req, res, next) => {
         console.log("err is " + error.message)
     }
 };
-
 
 export const getMyCollege = async (req, res, next) => {
     try {

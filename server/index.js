@@ -36,13 +36,14 @@ app.get("/", (req, res) => {
   });
 });
 
-
+// app routes
 app.use("/api/users", userRoute);
 app.use("/api/colleges", collegeRoute);
 app.use("/api/my-college", myCollegeRoute);
 app.use("/api/reviews", clgReviewRoute);
 app.use("/api/research", researchPaperRoute);
 
+// connecting database and listening the server
 connectDB()
   .then(() => {
     app.listen(port, () => {

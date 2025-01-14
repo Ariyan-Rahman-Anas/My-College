@@ -5,7 +5,6 @@ import { Star } from "lucide-react"
 import { useParams } from "react-router-dom"
 
 const CollegeDetailsPage = () => {
-
     const { id } = useParams()
     const { data, isLoading } = useGetACollegeQuery(id)
     const college = data?.college
@@ -29,14 +28,13 @@ const CollegeDetailsPage = () => {
                         <div className="flex items-center gap-1">
                             <p className="font-semibold" >{rating}</p>
                             {Array.from({ length: rating || 1 }, (_, idx) => idx + 1).map((num) => (
-                                <Star key={num} size={14} color="black" fill="black" />
+                                <Star key={num} size={14} color="gold" fill="gold" />
                             ))}
                         </div>
                     </div>
                     <p>{details}</p>
                 </div>
             </div>
-
 
             <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4 space-y-4">
                 <Card className="flex1">
@@ -58,8 +56,6 @@ const CollegeDetailsPage = () => {
                 </Card>
             </div>
 
-
-
             <Card>
                 <CardTitle>Events:</CardTitle>
                 <ul>
@@ -77,12 +73,7 @@ const CollegeDetailsPage = () => {
                     ))}
                 </ul>
             </Card>
-
-
-
-
         </div>
     )
 }
-
 export default CollegeDetailsPage

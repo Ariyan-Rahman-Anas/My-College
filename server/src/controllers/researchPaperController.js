@@ -15,7 +15,6 @@ export const getAllResearchPaper = async (req, res, next) => {
             totalResearchPapers: researchPapers.length,
             researchPapers,
         })
-
     } catch (error) {
         next(error)
     }
@@ -36,7 +35,7 @@ export const getResearchPaperById = async (req, res, next) => {
             message: "Research paper fetched successfully",
             researchPaper,
         })
-        
+
     } catch (error) {
         next(error)
     }

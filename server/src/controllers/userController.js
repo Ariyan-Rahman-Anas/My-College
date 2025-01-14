@@ -193,7 +193,6 @@ export const userLogout = async (req, res, next) => {
   }
 }
 
-
 // update user profile / information
 export const updateUserProfile = async (req, res, next) => {
   try {
