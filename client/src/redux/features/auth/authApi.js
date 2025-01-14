@@ -8,6 +8,7 @@ const authApi = baseApi.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
+      invalidatesTags:["user"]
     }),
     login: builder.mutation({
       query: (credentials) => ({
@@ -15,6 +16,7 @@ const authApi = baseApi.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
+      invalidatesTags:["user"]
     }),
     googleAuth: builder.mutation({
       query: (credentials) => ({
@@ -22,18 +24,30 @@ const authApi = baseApi.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
+      invalidatesTags:["user"]
     }),
     logout: builder.mutation({
       query: () => ({
         url: "/users/logout",
         method: "POST",
       }),
+      invalidatesTags:["user"]
     }),
+    updateProfile: builder.mutation({
+      query: ({ userId, ...userData }) => ({
+        url: `/users/edit-profile?userId=${userId}`,
+        method: "PATCH",
+        body: userData,
+        // params: userId
+      }),
+      invalidatesTags:["user"]
+    })
   }),
 });
 
 export const {
-    useRegistrationMutation,
-    useLoginMutation, useGoogleAuthMutation,
-    useLogoutMutation
+  useRegistrationMutation,
+  useLoginMutation, useGoogleAuthMutation,
+  useLogoutMutation,
+  useUpdateProfileMutation
 } = authApi

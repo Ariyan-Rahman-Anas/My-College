@@ -10,7 +10,7 @@ const HomePage = () => {
     <div className="px-2 space-y-20">
       <div className="space-y-2">
         <SearchCollege />
-      <Hero />
+        <Hero />
       </div>
       <KeyService />
       <HowItWorks />
@@ -19,5 +19,4 @@ const HomePage = () => {
     </div>
   )
 }
-
 export default HomePage

@@ -138,53 +138,7 @@ export const userLogin = async (req, res, next) => {
   }
 }
 
-
-// // Google auth--
-// export const googleAuth = async (req, res, next) => {
-//   try {
-//     console.log(req.body.email)
-//     console.log(req.body.name)
-//     const user = await UserModel.findOne({ email: req.body.email });
-//     if (user) {
-//       // Generate JWT token
-//       const token = generateToken(user._id.toString())
-
-//       sendTokenInCookie(res, user._id.toString())
-
-//       res.status(200).json({
-//         success: true,
-//         message: `Welcome back ${user.name}`,
-//         user,
-//         token,
-//       });
-//     } else {
-//       const generatedPassword = Math.random().toString(36).slice(-8);
-//       const generatedUsername =
-//         req.body.name.split(" ").join("").toLowerCase() +
-//         Math.floor(Math.random() * 10000).toString();
-
-//       const newUser = await UserModel.create({
-//         name: generatedUsername,
-//         email: req.body.email,
-//         password: generatedPassword
-//       });
-//        // Generate JWT token
-//       const token = generateToken(newUser._id.toString())
-
-//       sendTokenInCookie(res, newUser._id.toString())
-
-//       res.status(200).json({
-//         success: true,
-//         message: `Welcome ${newUser.name}`,
-//         newUser,
-//         token,
-//       });
-//     }
-//   } catch (err) {
-//     next(err)
-//   }
-// };
-
+// google auth
 export const googleAuth = async (req, res, next) => {
   try {
     console.log(req.body.email)
@@ -234,6 +188,73 @@ export const userLogout = async (req, res, next) => {
       success: true,
       message: "Logged out",
     });
+  } catch (error) {
+    next(error)
+  }
+}
+
+
+// update user profile / information
+export const updateUserProfile = async (req, res, next) => {
+  try {
+    const { userId } = req.query
+    console.log({ userId })
+    const { name, email, password } = req.body
+    console.log({ name, email, password })
+
+    const user = await UserModel.findById(userId)
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    if (name) {
+      user.name = name
+    }
+    if (email) {
+      user.email = email
+    }
+
+    if (password) {
+      if (password.length < 8) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must be at least 8 characters long",
+        });
+      }
+      if (!/[A-Za-z]/.test(password)) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must contain at least one letter",
+        });
+      }
+      if (!/\d/.test(password)) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must contain at least one number",
+        });
+      }
+      if (!/[@$!%*?&]/.test(password)) {
+        return res.status(400).json({
+          success: false,
+          message: "Password must contain at least one special character",
+        });
+      }
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+      user.password = hashedPassword;
+    }
+
+    await user.save()
+
+    res.status(200).json({
+      success: true,
+      message: "Profile updated successfully",
+      user,
+    });
+
   } catch (error) {
     next(error)
   }
