@@ -5,20 +5,16 @@ import { Card, CardTitle } from "@/components/ui/card"
 import { useGetMyCollegesQuery } from "@/redux/features/myCollegeApi"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { toast } from "sonner"
 
 const MyCollegesPage = () => {
 
   const userEmail = useSelector(state => state?.auth?.user?.email)
   const { data, isLoading, error } = useGetMyCollegesQuery(userEmail)
 
-  if (error) {
-    toast.error(error?.data?.message)
-  }
   if (isLoading) return <IsRTKLoadingLoader />
 
   return (
-    <div className="p-2" >
+    <div className="p-2 min-h-[50vh] flex flex-col items-center justify-center " >
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {
@@ -52,6 +48,15 @@ const MyCollegesPage = () => {
           </Card>)
         }
       </div>
+
+      {
+        error && <div className="border-2 border-dashed rounded-lg border-gray-300 w-full md:w-fit mx-auto">
+          <div className="text-center p-4 space-y-2">
+            <h1 className="text-2xl font-semibold">Oops!</h1>
+            <p className="text-sm font-semibold " >{error?.data?.message}</p>
+          </div>
+        </div>
+      }
     </div>
   )
 }

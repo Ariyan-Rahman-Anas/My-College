@@ -1,30 +1,16 @@
-// const Footer = () => {
-
-//     const currentDate = new Date()
-//     const currentYear = currentDate.getFullYear()
-
-//   return (
-//       <footer className="absolute bottom-0 left-0 right-0 pt-4 text-center ">
-//           <p>{currentYear} ©-My College</p>
-//     </footer>
-//   )
-// }
-// export default Footer
-
-
-
 import { Link } from "react-router-dom"
 
 const Footer = () => {
-  const topCategories = [
-    "Home Furniture",
-    "Office Furniture",
+  const topClg= [
+    "Harvard University",
+    "Stanford University",
+    "University of Oxford"
   ]
 
   const quickLinks = [
-    {title:"Home", route:"/"},
     {title:"Login", route:"/login"},
-    {title:"Shop Now", route:"/search"},
+    {title:"Registration", route:"/registration"},
+    {title:"Admission", route:"/admission"},
   ]
 
   const getInTouch = [
@@ -62,13 +48,13 @@ const Footer = () => {
 
         <div className="w-full lg:w-[60%] flex items-start justify-between gap-8 ">
           <div id="top-categories" className=" flex-1 ">
-            <h1 className="font-bold text-xl mb-5 "  >Top Categories</h1>
+            <h1 className="font-bold text-xl mb-5 "  >Top Colleges</h1>
             <ul className="space-y-3 mb-3">
               {
-                topCategories?.map((category, index) => <li key={index} className="hover:ml-4 hover:font-semibold hover:text-myRed hover:underline duration-300" > <Link to={"/products"}>{category}</Link> </li>)
+                topClg?.map((category, index) => <li key={index} className="hover:ml-4 hover:font-semibold hover:text-myRed hover:underline duration-300" > <Link to={"/colleges"}>{category}</Link> </li>)
               }
             </ul>
-            <Link to={"/products"} className="hover:ml-4 font-semibold text-myRed hover:text-gray-300 duration-300" >All Categories →</Link>
+            <Link to={"/colleges"} className="hover:ml-4 font-semibold text-myRed hover:text-gray-300 duration-300" >All Colleges →</Link>
           </div>
 
           <div id="quick-links" className="flex-1 ">
