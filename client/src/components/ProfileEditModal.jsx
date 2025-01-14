@@ -116,16 +116,16 @@ const ProfileEditModal = () => {
                 </div>
 
                 <Button
-                // disabled={isLoading}
+                disabled={isLoading}
                 >
-                  {/* {
+                  {
                       isLoading ? (
-                        <>
+                      <>
+                          Updating...
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Please wait
                         </>
-                      ) : "Registration"
-                    } */} Update
+                      ) : "Update"
+                    } 
                 </Button>
               </div>
 

@@ -8,7 +8,7 @@ const authApi = baseApi.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
-      invalidatesTags:["user"]
+      invalidatesTags: ["user"]
     }),
     login: builder.mutation({
       query: (credentials) => ({
@@ -16,7 +16,7 @@ const authApi = baseApi.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
-      invalidatesTags:["user"]
+      invalidatesTags: ["user"]
     }),
     googleAuth: builder.mutation({
       query: (credentials) => ({
@@ -24,33 +24,23 @@ const authApi = baseApi.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
-      invalidatesTags:["user"]
+      invalidatesTags: ["user"]
     }),
     logout: builder.mutation({
       query: () => ({
         url: "/users/logout",
         method: "POST",
       }),
-      invalidatesTags:["user"]
+      invalidatesTags: ["user"]
     }),
-    // updateProfile: builder.mutation({
-    //   query: ({ userId, ...userData }) => ({
-    //     url: `/users/edit-profile`,
-    //     method: "PATCH",
-    //     body: userData,
-    //     params: userId
-    //   }),
-    //   invalidatesTags:["user"]
-    // })
     updateProfile: builder.mutation({
-  query: ({ userId, ...userData }) => ({
-    url: `/users/edit-profile?userId=${userId}`, // Append userId to the query string
-    method: "PATCH",
-    body: userData, // Include only the fields to be updated in the body
-  }),
-  invalidatesTags: ["user"], // Invalidate user-related cache
-}),
-
+      query: ({ userId, ...userData }) => ({
+        url: `/users/edit-profile?userId=${userId}`,
+        method: "PATCH",
+        body: userData,
+      }),
+      invalidatesTags: ["user"],
+    }),
   }),
 });
 

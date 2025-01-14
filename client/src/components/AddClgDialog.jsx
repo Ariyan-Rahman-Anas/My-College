@@ -1,4 +1,4 @@
-import { X } from "lucide-react"
+import { Loader2, X } from "lucide-react"
 import { useForm } from "react-hook-form";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
@@ -40,7 +40,6 @@ const AddClgDialog = ({ openModal, setOpenModal, clgId }) => {
 
         postMyCollege(formDataObj); 
         reset();
-        setOpenModal(false);
     };
 
     useEffect(() => {
@@ -51,13 +50,10 @@ const AddClgDialog = ({ openModal, setOpenModal, clgId }) => {
         if (isSuccess) {
             toast.success(data?.message)
             navigate(`/my-college`)
+            setOpenModal(false)
         }
-    }, [data?.message, error, isSuccess, navigate])
+    }, [data?.message, error, isSuccess, navigate,setOpenModal])
 
-
-    if (isLoading) {
-        return <IsRTKLoadingLoader />
-    }
 
     return (
         <div className="mx-auto w-fit">
@@ -189,7 +185,18 @@ const AddClgDialog = ({ openModal, setOpenModal, clgId }) => {
 
                             {/* Footer with Submit Button */}
                             <div className="flex items-center justify-end">
-                                <Button type="submit">Submit</Button>
+                                 <Button
+                disabled={isLoading}
+                >
+                  {
+                      isLoading ? (
+                      <>
+                          Adding...
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        </>
+                      ) : "Add College"
+                    } 
+                </Button>
                             </div>
                         </div>
                     </form>
