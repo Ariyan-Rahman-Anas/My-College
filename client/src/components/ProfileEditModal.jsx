@@ -20,18 +20,29 @@ const ProfileEditModal = () => {
     setError, reset
   } = useForm()
 
-  const [updateProfile, { data, isLoading, error, isSuccess }] = useUpdateProfileMutation()
+  const [updateProfile, { data, isLoading, error, isSuccess }] = useUpdateProfileMutation({userId:_id})
+
+  // const handleUpdate = (formData) => {
+  //    const data = {
+  //   name: formData?.name,
+  //   email: formData?.email,
+  //   password: formData?.password,
+  //   };
+  //   updateProfile(data)
+    
+  // }
 
   const handleUpdate = (formData) => {
-     const data = {
-    userId: _id, 
+  const data = {
+    userId: _id, // Ensure _id (current user ID) is available from context, props, or state
     name: formData?.name,
     email: formData?.email,
     password: formData?.password,
-    };
-    updateProfile(data)
-    
-  }
+  };
+  updateProfile(data); // Pass data object containing userId and updated fields
+};
+
+
 
   console.log({error})
 

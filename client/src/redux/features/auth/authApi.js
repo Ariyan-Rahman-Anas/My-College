@@ -33,15 +33,24 @@ const authApi = baseApi.injectEndpoints({
       }),
       invalidatesTags:["user"]
     }),
+    // updateProfile: builder.mutation({
+    //   query: ({ userId, ...userData }) => ({
+    //     url: `/users/edit-profile`,
+    //     method: "PATCH",
+    //     body: userData,
+    //     params: userId
+    //   }),
+    //   invalidatesTags:["user"]
+    // })
     updateProfile: builder.mutation({
-      query: ({ userId, ...userData }) => ({
-        url: `/users/edit-profile?userId=${userId}`,
-        method: "PATCH",
-        body: userData,
-        // params: userId
-      }),
-      invalidatesTags:["user"]
-    })
+  query: ({ userId, ...userData }) => ({
+    url: `/users/edit-profile?userId=${userId}`, // Append userId to the query string
+    method: "PATCH",
+    body: userData, // Include only the fields to be updated in the body
+  }),
+  invalidatesTags: ["user"], // Invalidate user-related cache
+}),
+
   }),
 });
 
